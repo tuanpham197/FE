@@ -1,13 +1,22 @@
 "use client";
 
 import { SkillsList } from "@/components/ui/skills";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, Variants } from "framer-motion";
 import { useState } from "react";
 import { AiOutlineBranches } from "react-icons/ai";
 import { BsCloud, BsFillPeopleFill } from "react-icons/bs";
 import { FaCss3Alt, FaNodeJs, FaReact } from "react-icons/fa";
 import { MdDesignServices } from "react-icons/md";
-import { SiExpress, SiGithubactions, SiMongodb, SiNextdotjs, SiOpenai, SiTailwindcss, SiTypescript, SiVite } from "react-icons/si";
+import {
+  SiExpress,
+  SiGithubactions,
+  SiMongodb,
+  SiNextdotjs,
+  SiOpenai,
+  SiTailwindcss,
+  SiTypescript,
+  SiVite,
+} from "react-icons/si";
 
 interface Project {
   id: string;
@@ -26,12 +35,10 @@ interface Project {
 }
 
 const projectsData: Project[] = [
-
   {
     id: "proj_1",
     title: "sam-tax.com",
-    description:
-      `• Trusted tax and accounting platform for expert tax preparation, financial planning, and business advisory services.\n\n• Developed a secure, scalable web application with multi-language support.\n\n• Integrated payment systems and AI-powered automation tools for enhanced efficiency.`,
+    description: `• Trusted tax and accounting platform for expert tax preparation, financial planning, and business advisory services.\n\n• Developed a secure, scalable web application with multi-language support.\n\n• Integrated payment systems and AI-powered automation tools for enhanced efficiency.`,
     type: "Web Application",
     website: "https://sam-tax.com/",
     technologies: [
@@ -56,8 +63,7 @@ const projectsData: Project[] = [
   {
     id: "proj_3",
     title: "SFB - Sustainable Form Builder ",
-    description:
-      `• Powerful no-code form builder for creating, customizing, and deploying smart forms in minutes.\n\n• Designed for teams and creators needing flexible data collection without technical headaches.\n\n• Features drag-and-drop, advanced logic, and seamless integrations.`,
+    description: `• Powerful no-code form builder for creating, customizing, and deploying smart forms in minutes.\n\n• Designed for teams and creators needing flexible data collection without technical headaches.\n\n• Features drag-and-drop, advanced logic, and seamless integrations.`,
     type: "SaaS Platform",
     website: "https://sfb-app.com",
     technologies: [
@@ -82,8 +88,7 @@ const projectsData: Project[] = [
   {
     id: "proj_4",
     title: "Gradients CSS",
-    description:
-      `• Modern tool for creating, exploring, and exporting beautiful CSS gradients.\n\n• Helps developers and designers customize gradients with ease.\n\n• Features real-time preview and export options for quick workflow.`,
+    description: `• Modern tool for creating, exploring, and exporting beautiful CSS gradients.\n\n• Helps developers and designers customize gradients with ease.\n\n• Features real-time preview and export options for quick workflow.`,
     type: "Tool",
     website: "https://gradientscss.vercel.app/",
     github: "https://github.com/projects/gradientscss",
@@ -105,8 +110,7 @@ const projectsData: Project[] = [
   {
     id: "proj_5",
     title: "Barber Academy",
-    description:
-      `• Comprehensive website for Barber Academy with online appointment scheduling.\n\n• Showcases a complete range of services and streamlines operations.\n\n• Delivered a user-friendly platform that increased client engagement.`,
+    description: `• Comprehensive website for Barber Academy with online appointment scheduling.\n\n• Showcases a complete range of services and streamlines operations.\n\n• Delivered a user-friendly platform that increased client engagement.`,
     type: "Website",
     website: "https://raoufzadi.vercel.app/",
     technologies: [
@@ -123,7 +127,7 @@ const projectsData: Project[] = [
     updated: "2023-08-01",
     logoFileName: "barber.svg",
   },
-    {
+  {
     id: "proj_6",
     title: "4CV - AI Resume Analyzer",
     description:
@@ -150,31 +154,63 @@ const projectsData: Project[] = [
 ];
 
 const techIconMap: Record<string, React.ReactNode> = {
-  "React": <FaReact className="text-sky-500" title="React" />,
+  React: <FaReact className="text-sky-500" title="React" />,
   "React.js": <FaReact className="text-sky-500" title="React.js" />,
-  "React (Next.js)": <SiNextdotjs className="text-black dark:text-white" title="Next.js" />,
-  "Next.js": <SiNextdotjs className="text-black dark:text-white" title="Next.js" />,
-  "TypeScript": <SiTypescript className="text-blue-600" title="TypeScript" />,
+  "React (Next.js)": (
+    <SiNextdotjs className="text-black dark:text-white" title="Next.js" />
+  ),
+  "Next.js": (
+    <SiNextdotjs className="text-black dark:text-white" title="Next.js" />
+  ),
+  TypeScript: <SiTypescript className="text-blue-600" title="TypeScript" />,
   "Node.js": <FaNodeJs className="text-green-700" title="Node.js" />,
   "Express.js": <SiExpress className="text-gray-700" title="Express.js" />,
-  "MongoDB": <SiMongodb className="text-green-600" title="MongoDB" />,
-  "Tailwind CSS": <SiTailwindcss className="text-cyan-400" title="Tailwind CSS" />,
-  "CSS3": <FaCss3Alt className="text-blue-500" title="CSS3" />,
-  "Vite": <SiVite className="text-purple-500" title="Vite" />,
-  "JWT & OAuth": <BsFillPeopleFill className="text-yellow-600" title="JWT & OAuth" />,
+  MongoDB: <SiMongodb className="text-green-600" title="MongoDB" />,
+  "Tailwind CSS": (
+    <SiTailwindcss className="text-cyan-400" title="Tailwind CSS" />
+  ),
+  CSS3: <FaCss3Alt className="text-blue-500" title="CSS3" />,
+  Vite: <SiVite className="text-purple-500" title="Vite" />,
+  "JWT & OAuth": (
+    <BsFillPeopleFill className="text-yellow-600" title="JWT & OAuth" />
+  ),
   "RESTful APIs": <BsCloud className="text-blue-400" title="RESTful APIs" />,
-  "CI/CD (GitHub Actions)": <SiGithubactions className="text-gray-700" title="GitHub Actions" />,
+  "CI/CD (GitHub Actions)": (
+    <SiGithubactions className="text-gray-700" title="GitHub Actions" />
+  ),
   "AI Automation": <SiOpenai className="text-gray-700" title="AI Automation" />,
   "Gemini AI API": <SiOpenai className="text-gray-700" title="Gemini AI API" />,
-  "Prompt Engineering": <SiOpenai className="text-gray-700" title="Prompt Engineering" />,
-  "Cloud Deployment": <BsCloud className="text-blue-400" title="Cloud Deployment" />,
+  "Prompt Engineering": (
+    <SiOpenai className="text-gray-700" title="Prompt Engineering" />
+  ),
+  "Cloud Deployment": (
+    <BsCloud className="text-blue-400" title="Cloud Deployment" />
+  ),
   "Cloud Hosting": <BsCloud className="text-blue-400" title="Cloud Hosting" />,
-  "UI/UX Design": <MdDesignServices className="text-pink-500" title="UI/UX Design" />,
-  "Export Utilities": <MdDesignServices className="text-pink-500" title="Export Utilities" />,
-  "Booking System": <BsFillPeopleFill className="text-green-700" title="Booking System" />,
-  "SaaS Multi-Tenant Architecture": <BsFillPeopleFill className="text-blue-700" title="SaaS Multi-Tenant Architecture" />,
-  "Open Source": <SiGithubactions className="text-black dark:text-white" title="Open Source" />,
-  "Data Visualization": <MdDesignServices className="text-purple-500" title="Data Visualization" />,
+  "UI/UX Design": (
+    <MdDesignServices className="text-pink-500" title="UI/UX Design" />
+  ),
+  "Export Utilities": (
+    <MdDesignServices className="text-pink-500" title="Export Utilities" />
+  ),
+  "Booking System": (
+    <BsFillPeopleFill className="text-green-700" title="Booking System" />
+  ),
+  "SaaS Multi-Tenant Architecture": (
+    <BsFillPeopleFill
+      className="text-blue-700"
+      title="SaaS Multi-Tenant Architecture"
+    />
+  ),
+  "Open Source": (
+    <SiGithubactions
+      className="text-black dark:text-white"
+      title="Open Source"
+    />
+  ),
+  "Data Visualization": (
+    <MdDesignServices className="text-purple-500" title="Data Visualization" />
+  ),
 };
 
 function ProjectDescription({ description }: { description: string }) {
@@ -224,7 +260,7 @@ const Projects = () => {
     setOpenProjectId(openProjectId === id ? null : id);
   };
 
-  const contentVariants = {
+  const contentVariants: Variants = {
     open: {
       opacity: 1,
       height: "auto",
@@ -248,7 +284,10 @@ const Projects = () => {
           Projects
         </h2>
         {/* ==== BEGIN: Proud Projects Intro ==== */}
-        <p className="mt-2 mb-6 text-base font-mono" style={{ color: "var(--card-paragraph)" }}>
+        <p
+          className="mt-2 mb-6 text-base font-mono"
+          style={{ color: "var(--card-paragraph)" }}
+        >
           These are some of my projects I’m proud of.
         </p>
         {/* ==== END: Proud Projects Intro ==== */}
@@ -262,9 +301,7 @@ const Projects = () => {
           data-state={openProjectId === project.id ? "open" : "closed"}
         >
           <div className="flex items-center ">
-            <div
-              className="mx-4 flex size-6 bg-[var(--card-background)] h-8 w-8 border  p-1 rounded-full  shrink-0"
-            >
+            <div className="mx-4 flex size-6 bg-[var(--card-background)] h-8 w-8 border  p-1 rounded-full  shrink-0">
               <img
                 alt={`${project.title} logo`}
                 loading="lazy"
@@ -300,25 +337,34 @@ const Projects = () => {
                   >
                     {project.title}
                   </h3>
-                  <dl className="text-sm" style={{ color: "var(--card-paragraph)" }}>
+                  <dl
+                    className="text-sm"
+                    style={{ color: "var(--card-paragraph)" }}
+                  >
                     <dt className="sr-only">Period</dt>
                     <dd className="flex items-center gap-0.5">
                       <span>
                         {project.created
-                          ? new Date(project.created).toLocaleDateString("en-US", {
-                            year: "numeric",
-                            month: "2-digit",
-                          })
+                          ? new Date(project.created).toLocaleDateString(
+                              "en-US",
+                              {
+                                year: "numeric",
+                                month: "2-digit",
+                              }
+                            )
                           : "Unknown"}
                       </span>
                       <span className="font-mono">—</span>
                       {project.status === "Published" && project.updated === ""
                         ? "Present"
                         : project.updated
-                          ? new Date(project.updated).toLocaleDateString("en-US", {
-                            year: "numeric",
-                            month: "2-digit",
-                          })
+                          ? new Date(project.updated).toLocaleDateString(
+                              "en-US",
+                              {
+                                year: "numeric",
+                                month: "2-digit",
+                              }
+                            )
                           : "Unknown"}
                     </dd>
                   </dl>
@@ -366,10 +412,11 @@ const Projects = () => {
                     strokeWidth={2}
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className={`lucide ${openProjectId === project.id
+                    className={`lucide ${
+                      openProjectId === project.id
                         ? "lucide-chevrons-down-up"
                         : "lucide-chevrons-up-down"
-                      } size-4`}
+                    } size-4`}
                     aria-hidden="true"
                     style={{ stroke: "var(--paragraph)" }}
                   >
