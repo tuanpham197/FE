@@ -25,7 +25,7 @@ const mockSocialLinks: SocialLink[] = [
   {
     _id: "1",
     platform: "GitHub",
-    url: "https://github.com/balshaer",
+    url: "https://github.com/tuanpham197",
     icon: "github",
     iconLibrary: "fontawesome",
     isActive: true,
@@ -36,7 +36,7 @@ const mockSocialLinks: SocialLink[] = [
   {
     _id: "2",
     platform: "LinkedIn",
-    url: "https://linkedin.com/in/balshaer",
+    url: "https://www.linkedin.com/in/tu%E1%BA%A5n-ph%E1%BA%A1m-102a30136/",
     icon: "linkedin",
     iconLibrary: "fontawesome",
     isActive: true,
@@ -46,19 +46,8 @@ const mockSocialLinks: SocialLink[] = [
   },
   {
     _id: "3",
-    platform: "YouTube",
-    url: "https://youtube.com/@codewithbaraa",
-    icon: "youtube",
-    iconLibrary: "fontawesome",
-    isActive: true,
-    order: 3,
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
-  },
-  {
-    _id: "4",
     platform: "Email Me",
-    url: "mailto:alshaer.contact@gmail.com",
+    url: "vantuankrn197@gmail.com",
     icon: "envelope",
     iconLibrary: "fontawesome",
     isActive: true,
@@ -66,20 +55,11 @@ const mockSocialLinks: SocialLink[] = [
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
   },
-  {
-    _id: "5",
-    platform: "WhatsApp",
-    url: "https://wa.me/970599349034",
-    icon: "whatsapp",
-    iconLibrary: "fontawesome",
-    isActive: true,
-    order: 5,
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
-  },
 ];
 
-export function useSocialLinks(activeOnly: boolean = true): UseSocialLinksReturn {
+export function useSocialLinks(
+  activeOnly: boolean = true
+): UseSocialLinksReturn {
   const [socialLinks, setSocialLinks] = useState<SocialLink[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);

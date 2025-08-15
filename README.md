@@ -101,10 +101,7 @@ Update your portfolio by editing the data files in `src/data/`:
 
 ## Contact
 
-- **Email**: alshaer.contact@gmail.com
-- **LinkedIn**: [linkedin.com/in/balshaer](https://linkedin.com/in/balshaer)
-- **GitHub**: [github.com/balshaer](https://github.com/balshaer)
-- **Portfolio**: [alshaer.vercel.app](https://alshaer.vercel.app)
+- **Email**: vantuankrn197@gmail.com
 
 ---
 
