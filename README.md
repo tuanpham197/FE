@@ -105,4 +105,4 @@ Update your portfolio by editing the data files in `src/data/`:
 
 ---
 
-Built with ❤️ by Tuan Pham Van
+Built with ❤️ by Tuan Pham Van - 97
