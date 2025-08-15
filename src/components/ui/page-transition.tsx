@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion, Transition, Variants } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { ReactNode } from "react";
 
@@ -10,7 +10,7 @@ interface PageTransitionProps {
 }
 
 // Professional transition variants
-const pageVariants = {
+const pageVariants: Variants = {
   initial: {
     opacity: 0,
     y: 20,
@@ -28,14 +28,14 @@ const pageVariants = {
   },
 };
 
-const pageTransition = {
+const pageTransition: Transition = {
   type: "tween",
   ease: "anticipate",
   duration: 0.4,
 };
 
 // Slide transition for sidebar navigation
-const slideVariants = {
+const slideVariants: Variants = {
   initial: {
     opacity: 0,
     x: -30,
@@ -50,14 +50,14 @@ const slideVariants = {
   },
 };
 
-const slideTransition = {
+const slideTransition: Transition = {
   type: "tween",
   ease: "easeInOut",
   duration: 0.3,
 };
 
 // Fade transition for subtle changes
-const fadeVariants = {
+const fadeVariants: Variants = {
   initial: {
     opacity: 0,
   },
@@ -69,7 +69,7 @@ const fadeVariants = {
   },
 };
 
-const fadeTransition = {
+const fadeTransition: Transition = {
   type: "tween",
   ease: "easeInOut",
   duration: 0.2,
@@ -145,7 +145,7 @@ export function FadeTransition({
 }
 
 // Staggered children animation for lists and grids
-export const staggerContainer = {
+export const staggerContainer: Variants = {
   initial: {},
   animate: {
     transition: {
@@ -154,7 +154,7 @@ export const staggerContainer = {
   },
 };
 
-export const staggerItem = {
+export const staggerItem: Variants = {
   initial: {
     opacity: 0,
     y: 20,
@@ -171,7 +171,7 @@ export const staggerItem = {
 };
 
 // Loading transition
-export const loadingVariants = {
+export const loadingVariants: Variants = {
   initial: {
     opacity: 0,
     scale: 0.8,
@@ -197,7 +197,7 @@ export const loadingVariants = {
 };
 
 // Modal/Dialog transitions
-export const modalVariants = {
+export const modalVariants: Variants = {
   initial: {
     opacity: 0,
     scale: 0.8,
@@ -225,7 +225,7 @@ export const modalVariants = {
   },
 };
 
-export const backdropVariants = {
+export const backdropVariants: Variants = {
   initial: {
     opacity: 0,
   },
@@ -244,7 +244,7 @@ export const backdropVariants = {
 };
 
 // Card hover animations
-export const cardHoverVariants = {
+export const cardHoverVariants: Variants = {
   initial: {
     scale: 1,
     y: 0,
@@ -263,7 +263,7 @@ export const cardHoverVariants = {
 };
 
 // Button press animation
-export const buttonPressVariants = {
+export const buttonPressVariants: Variants = {
   initial: {
     scale: 1,
   },
@@ -278,7 +278,7 @@ export const buttonPressVariants = {
 };
 
 // Navigation link active state
-export const navLinkVariants = {
+export const navLinkVariants: Variants = {
   initial: {
     backgroundColor: "transparent",
     color: "var(--paragraph)",
@@ -303,7 +303,7 @@ export const navLinkVariants = {
 };
 
 // Notification/Toast animations
-export const toastVariants = {
+export const toastVariants: Variants = {
   initial: {
     opacity: 0,
     y: 50,
@@ -332,7 +332,7 @@ export const toastVariants = {
 };
 
 // Sidebar collapse/expand animation
-export const sidebarVariants = {
+export const sidebarVariants: Variants = {
   expanded: {
     width: "280px",
     transition: {
@@ -352,7 +352,7 @@ export const sidebarVariants = {
 };
 
 // Form field focus animation
-export const fieldFocusVariants = {
+export const fieldFocusVariants: Variants = {
   initial: {
     borderColor: "var(--input-border-color)",
     boxShadow: "none",
@@ -369,7 +369,7 @@ export const fieldFocusVariants = {
 };
 
 // Success/Error state animations
-export const statusVariants = {
+export const statusVariants: Variants = {
   success: {
     borderColor: "#10b981",
     backgroundColor: "#f0fdf4",
