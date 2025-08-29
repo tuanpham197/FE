@@ -95,7 +95,7 @@ const WORK_EXPERIENCE: ExperienceItemType[] = [
         title: "Graduated with a Bachelor's degree in Software Engineering.",
         employmentPeriod: "2016 – 2020",
         employmentType: "Education",
-        description: `• Studied Software Engineering and Database Systems with a strong emphasis on building secure applications and robust data management.\n\n• Developed a solid foundation in modern programming practices, system architecture, and problem-solving.\n\n• Engaged in hands-on projects and collaborative learning environments.`,
+        description: `• Studied Software Engineering and Database Systems with a strong emphasis on building secure applications and robust data management.\n\n• Developed a solid foundation in modern programming practices, system architecture, and problem-solving.\n\n• Engaged in hands-on projects and collaborative learning environments.\n\n• GPA: 3.2`,
         icon: "education",
         skills: [
           "Software Engineering",
