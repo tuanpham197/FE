@@ -204,6 +204,27 @@ export const ALL_SKILLS: SkillData[] = [
     icon: <SiClaude title="Claude" className="text-gray-700" />,
     category: "AI Pair Programing",
   },
+  // Certificates
+  {
+    name: "AWS Certified Developer - Associate",
+    icon: (
+      <img
+        width={25}
+        height={25}
+        src="https://images.credly.com/images/b9feab85-1a43-4f6c-99a5-631b88d5461b/image.png"
+      />
+      // <FaAws
+      //   title="AWS Certified Developer - Associate"
+      //   className="text-blue-500"
+      // />
+    ),
+    category: "Certificates",
+  },
+  {
+    name: "CSS",
+    icon: <FaCss3Alt title="CSS" className="text-blue-500" />,
+    category: "Other",
+  },
   // Other
   {
     name: "HTML",
