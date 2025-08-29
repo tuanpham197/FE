@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ReactNode } from "react";
 import {
   FaAws,
@@ -208,22 +209,27 @@ export const ALL_SKILLS: SkillData[] = [
   {
     name: "AWS Certified Developer - Associate",
     icon: (
-      <img
+      <Image
+        alt="AWS Certified Developer - Associate"
+        className="cert"
+        id="cert"
         width={25}
         height={25}
-        src="https://images.credly.com/images/b9feab85-1a43-4f6c-99a5-631b88d5461b/image.png"
+        src={
+          "https://images.credly.com/images/b9feab85-1a43-4f6c-99a5-631b88d5461b/image.png"
+        }
       />
+      // <img
+      //   width={25}
+      //   height={25}
+      //   src=""
+      // />
       // <FaAws
       //   title="AWS Certified Developer - Associate"
       //   className="text-blue-500"
       // />
     ),
     category: "Certificates",
-  },
-  {
-    name: "CSS",
-    icon: <FaCss3Alt title="CSS" className="text-blue-500" />,
-    category: "Other",
   },
   // Other
   {
