@@ -102,11 +102,6 @@ function HeroSection() {
           efficient, and easy to maintain.
           <br />
           <br />
-          I take pride in writing clean, maintainable code and designing
-          user-centric interfaces that enhance usability and engagement. My
-          approach combines technical expertise with a strong focus on
-          innovation, ensuring every project is both functional and
-          future-ready.
           <br />
         </p>
       </div>

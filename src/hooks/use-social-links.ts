@@ -36,7 +36,7 @@ const mockSocialLinks: SocialLink[] = [
   {
     _id: "2",
     platform: "LinkedIn",
-    url: "https://www.linkedin.com/in/tu%E1%BA%A5n-ph%E1%BA%A1m-102a30136/",
+    url: "https://www.linkedin.com/in/tuankrn197/",
     icon: "linkedin",
     iconLibrary: "fontawesome",
     isActive: true,
@@ -47,7 +47,7 @@ const mockSocialLinks: SocialLink[] = [
   {
     _id: "3",
     platform: "Email Me",
-    url: "vantuankrn197@gmail.com",
+    url: "mailto:vantuankrn197@gmail.com",
     icon: "envelope",
     iconLibrary: "fontawesome",
     isActive: true,
