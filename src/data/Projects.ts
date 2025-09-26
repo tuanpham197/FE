@@ -4,7 +4,7 @@ const getFaviconUrl = (url: string | undefined): string => {
   if (!url) return "/app/images/logo.png";
   try {
     const domain = new URL(url).origin;
-    return `${domain}/favicon.ico`;
+    return `${domain}/logo-cv.png`;
   } catch {
     return "/app/images/logo.png";
   }
