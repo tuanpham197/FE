@@ -47,17 +47,23 @@ const WORK_EXPERIENCE: ExperienceItemType[] = [
         title: "Backend Developer",
         employmentPeriod: "August 2023 – March 2024",
         employmentType: "Full-time",
-        description: `• Developed the Sustainable Star Form Builder platform with customizable forms and drag-and-drop functionality.\n\n• Ensured responsive design and optimized frontend performance for a seamless user experience.\n\n• Collaborated with designers and backend engineers to deliver new features and improvements.`,
+        description: `• Project description:\n\nThis is an internal website for selling pharmaceuticals and functional foods.
+          \n\n• Main responsibilities:
+          \n\nBuild struct source base
+          \n\nBuild basic service (auth, helper, crud entity, some feature ...)
+          \n\nDesign database
+          \n\n• Achieved results: \n\nLearn about deployment microservice system
+          \n\n• Team size: \n\n8 members`,
         icon: "code",
         skills: [
-          "Laravel",
-          "PHP",
-          "VueJS",
-          "TypeScript",
-          "Tailwind CSS",
-          "REST APIs",
-          "Git",
-          "Axios",
+          "GoLang",
+          "RabbitMQ",
+          "gRPC",
+          "Redis",
+          "MySQL",
+          "MongoDB",
+          "Docker",
+          "Kong",
         ],
         location: "Da Nang, VietNam",
       },

@@ -19,8 +19,7 @@ export const profileData: Profile = {
   phone: "+970599349034",
   location: "Gaza Strip, Palestine",
   bio: "Passionate Full Stack Developer with expertise in React, Node.js, TypeScript, and modern web technologies. I specialize in engineering secure full-stack web applications, developing AI-powered automation tools, and creating dynamic user interfaces that solve real-world problems and provide excellent user experiences.",
-  avatar:
-    "https://cdn.dribbble.com/userupload/14186516/file/original-302bcec5d5a7d2bae6c18ee8cabc5f37.png?resize=400x400",
+  avatar: "logo-cv.png",
   skills: [
     "JavaScript",
     "TypeScript",
