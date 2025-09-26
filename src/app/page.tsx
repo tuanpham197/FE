@@ -4,7 +4,6 @@ import PostSection from "@/components/sections/blog/PostSection";
 import WorkExperienceSection from "@/components/sections/experience/WorkExperienceSection";
 import HeroSection from "@/components/sections/hero/HeroSection";
 import Projects from "@/components/sections/projects/Projects";
-import RecommendationsSection from "@/components/sections/recommendations/RecommendationsSection";
 import SkillsSection from "@/components/sections/skills/SkillsSection";
 import { Button } from "@/components/ui";
 import ClickSpark from "@/components/ui/ClickSpark";
@@ -14,13 +13,10 @@ import { ScrollEffect } from "@/lib/animations";
 import Link from "next/link";
 import { MdEmail } from "react-icons/md";
 
-
 export default function HomePage() {
   return (
     <div className="container mx-auto">
-
       <HeroSection />
-
 
       <div className="py-4 border-t mt-6">
         <SkillsSection />
@@ -30,16 +26,15 @@ export default function HomePage() {
         <WorkExperienceSection />
       </div>
 
-      <div id="projects" className="py-4 border-t mt-6">
+      <div id="projects" className="py-4  m-6">
         <Projects />
       </div>
 
-
-      <div className="py-4 border-t mt-6">
+      {/* <div className="py-4 border-t mt-6">
         <RecommendationsSection />
-      </div>
+      </div> */}
 
-      <div className="py-4 border-t mt-6">
+      <div className="py-4 mt-6">
         <PostSection />
       </div>
 
@@ -63,20 +58,13 @@ export default function HomePage() {
                 I'm open to discussing new projects, creative ideas, or
                 opportunities to be part of your vision.
               </p>
-              <Link
-                href={mailto}
-           
-           
-
->
-
-<Button icon={<MdEmail className="h-4 w-4"/>} className="mx-auto flex-row-reverse">
-                Get in Touch
-
-
-</Button>
-
-             
+              <Link href={mailto}>
+                <Button
+                  icon={<MdEmail className="h-4 w-4" />}
+                  className="mx-auto flex-row-reverse"
+                >
+                  Get in Touch
+                </Button>
               </Link>
             </div>
           </div>

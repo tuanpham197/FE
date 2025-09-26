@@ -37,118 +37,16 @@ interface Project {
 const projectsData: Project[] = [
   {
     id: "proj_1",
-    title: "sam-tax.com",
-    description: `• Trusted tax and accounting platform for expert tax preparation, financial planning, and business advisory services.\n\n• Developed a secure, scalable web application with multi-language support.\n\n• Integrated payment systems and AI-powered automation tools for enhanced efficiency.`,
+    title: "Classic Holiday",
+    description: `• Booking resort service.`,
     type: "Web Application",
-    website: "https://sam-tax.com/",
-    technologies: [
-      "React (Next.js)",
-      "TypeScript",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "Tailwind CSS",
-      "JWT & OAuth",
-      "CI/CD (GitHub Actions)",
-      "AI Automation",
-      "Payment Integration",
-      "Cloud Deployment",
-    ],
+    website: "https://classicholidays.com.au",
+    technologies: ["VueJs", "TypeScript", "SCSS", "AWS Amplify"],
     status: "Published",
     featured: true,
     created: "2024-06-01",
     updated: "",
-    logoFileName: "samtax.svg",
-  },
-  {
-    id: "proj_3",
-    title: "SFB - Sustainable Form Builder ",
-    description: `• Powerful no-code form builder for creating, customizing, and deploying smart forms in minutes.\n\n• Designed for teams and creators needing flexible data collection without technical headaches.\n\n• Features drag-and-drop, advanced logic, and seamless integrations.`,
-    type: "SaaS Platform",
-    website: "https://sfb-app.com",
-    technologies: [
-      "React (Next.js)",
-      "TypeScript",
-      "React DnD",
-      "Node.js",
-      "RESTful APIs",
-      "Tailwind CSS",
-      "JWT & OAuth",
-      "SaaS Multi-Tenant Architecture",
-      "Cloud Hosting",
-      "Automated Testing",
-    ],
-    status: "Published",
-    featured: true,
-    created: "2023-06-01",
-    updated: "2023-11-30",
-    videoUrl: "https://www.youtube.com/watch?v=2IqjzGT1l1c",
-    logoFileName: "sfb.svg",
-  },
-  {
-    id: "proj_4",
-    title: "Gradients CSS",
-    description: `• Modern tool for creating, exploring, and exporting beautiful CSS gradients.\n\n• Helps developers and designers customize gradients with ease.\n\n• Features real-time preview and export options for quick workflow.`,
-    type: "Tool",
-    website: "https://gradientscss.vercel.app/",
-    github: "https://github.com/projects/gradientscss",
-    technologies: [
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "Vite",
-      "CSS3",
-      "UI/UX Design",
-      "Export Utilities",
-    ],
-    status: "Published",
-    featured: true,
-    created: "2024-11-01",
-    updated: "",
-    logoFileName: "gradientscss.png",
-  },
-  {
-    id: "proj_5",
-    title: "Barber Academy",
-    description: `• Comprehensive website for Barber Academy with online appointment scheduling.\n\n• Showcases a complete range of services and streamlines operations.\n\n• Delivered a user-friendly platform that increased client engagement.`,
-    type: "Website",
-    website: "https://raoufzadi.vercel.app/",
-    technologies: [
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "RESTful APIs",
-      "Booking System",
-      "Responsive Design",
-    ],
-    status: "Published",
-    featured: true,
-    created: "2023-07-01",
-    updated: "2023-08-01",
-    logoFileName: "barber.svg",
-  },
-  {
-    id: "proj_6",
-    title: "4CV - AI Resume Analyzer",
-    description:
-      "Transform your hiring process with AI-powered resume analysis. Built an advanced platform that provides instant, comprehensive candidate insights using Gemini AI. Streamlines recruitment workflows and delivers actionable hiring recommendations in seconds.",
-    type: "AI Platform",
-    website: "http://4cv.vercel.app/",
-    technologies: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "Gemini AI API",
-      "AI Integration",
-      "Resume Processing",
-      "Machine Learning",
-    ],
-    status: "Published",
-    featured: true,
-    created: "2024-12-01",
-    updated: "2025-01-13",
-    logoFileName: "4cv.svg",
+    logoFileName: "classicholiday.svg",
   },
   // ...you can bring back your other commented-out projects here
 ];
@@ -483,7 +381,7 @@ const Projects = () => {
       ))}
 
       {/* ==== BEGIN: Explore More on GitHub ==== */}
-      <div className="px-4 py-6 flex justify-center">
+      {/* <div className="px-4 py-6 flex justify-center">
         <a
           href="https://github.com/balshaer"
           target="_blank"
@@ -493,7 +391,7 @@ const Projects = () => {
         >
           Explore more on GitHub
         </a>
-      </div>
+      </div> */}
       {/* ==== END: Explore More on GitHub ==== */}
     </section>
   );

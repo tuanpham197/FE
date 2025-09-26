@@ -22,14 +22,34 @@ import ClickSpark from "../../ui/ClickSpark";
 import { MagicCard } from "../../ui/MagicCard";
 
 const formSchema = z.object({
-  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
-  email: z.string().email({ message: "Invalid email address." }),
+  name: z
+    .string()
+    .trim()
+    .min(1, { message: "Name is required." })
+    .min(2, { message: "Name must be at least 2 characters." })
+    .max(50, { message: "Name must be less than 50 characters." })
+    .regex(/^[a-zA-Z\s'-]+$/, {
+      message:
+        "Name can only contain letters, spaces, apostrophes, and hyphens.",
+    }),
+  email: z
+    .string()
+    .trim()
+    .min(1, { message: "Email is required." })
+    .email({ message: "Please enter a valid email address." })
+    .max(100, { message: "Email must be less than 100 characters." }),
   subject: z
     .string()
-    .min(5, { message: "Subject must be at least 5 characters." }),
+    .trim()
+    .min(1, { message: "Subject is required." })
+    .min(5, { message: "Subject must be at least 5 characters." })
+    .max(100, { message: "Subject must be less than 100 characters." }),
   message: z
     .string()
-    .min(10, { message: "Message must be at least 10 characters." }),
+    .trim()
+    .min(1, { message: "Message is required." })
+    .min(10, { message: "Message must be at least 10 characters." })
+    .max(1000, { message: "Message must be less than 1000 characters." }),
 });
 
 export default function ContactForm() {
@@ -37,6 +57,8 @@ export default function ContactForm() {
 
   const form = useForm({
     resolver: zodResolver(formSchema),
+    mode: "onChange", // Validate on change for immediate feedback
+    reValidateMode: "onChange", // Re-validate on change after first error
     defaultValues: {
       name: "",
       email: "",
@@ -46,6 +68,12 @@ export default function ContactForm() {
   });
 
   const onSubmit = async (data: z.infer<typeof formSchema>) => {
+    // Prevent submission if form has errors
+    if (!form.formState.isValid) {
+      toast.error("Please fix the errors in the form before submitting.");
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
@@ -59,14 +87,17 @@ export default function ContactForm() {
         return;
       }
 
+      // Validate data one more time before sending
+      const validatedData = formSchema.parse(data);
+
       const result = await emailjs.send(
         serviceId,
         templateId,
         {
-          name: data.name,
-          email: data.email,
-          subject: data.subject,
-          message: data.message,
+          name: validatedData.name,
+          email: validatedData.email,
+          subject: validatedData.subject,
+          message: validatedData.message,
         },
         userId
       );
@@ -76,7 +107,26 @@ export default function ContactForm() {
       toast.success("Message sent successfully! I'll get back to you soon.");
     } catch (error) {
       console.error("Failed to send email:", error);
-      toast.error("Failed to send message. Please try again later.");
+
+      // Provide more specific error messages
+      if (error instanceof z.ZodError) {
+        toast.error("Please check your form data and try again.");
+        return;
+      }
+
+      if (error instanceof Error) {
+        if (error.message.includes("network")) {
+          toast.error(
+            "Network error. Please check your connection and try again."
+          );
+        } else if (error.message.includes("timeout")) {
+          toast.error("Request timeout. Please try again.");
+        } else {
+          toast.error("Failed to send message. Please try again later.");
+        }
+      } else {
+        toast.error("An unexpected error occurred. Please try again later.");
+      }
     } finally {
       setIsSubmitting(false);
     }
@@ -116,11 +166,15 @@ export default function ContactForm() {
                       <FormControl>
                         <Input
                           placeholder="Enter your name"
-                          className="rounded-[8px] border-[var(--input-border-color)] bg-[var(--input-background)] text-[var(--input-text)]"
+                          className={cn(
+                            "rounded-[8px] border-[var(--input-border-color)] bg-[var(--input-background)] text-[var(--input-text)]",
+                            form.formState.errors.name &&
+                              "border-red-500 focus:border-red-500 focus:ring-red-500"
+                          )}
                           {...field}
                         />
                       </FormControl>
-                      <FormMessage className="text-red-500" />
+                      <FormMessage className="text-red-500 text-sm font-medium mt-1 bg-red-50 dark:bg-red-950/20 px-2 py-1 rounded-md" />
                     </FormItem>
                   )}
                 />
@@ -136,11 +190,15 @@ export default function ContactForm() {
                       <FormControl>
                         <Input
                           placeholder="Enter your email"
-                          className="rounded-[8px] border-[var(--input-border-color)] bg-[var(--input-background)] text-[var(--input-text)]"
+                          className={cn(
+                            "rounded-[8px] border-[var(--input-border-color)] bg-[var(--input-background)] text-[var(--input-text)]",
+                            form.formState.errors.email &&
+                              "border-red-500 focus:border-red-500 focus:ring-red-500"
+                          )}
                           {...field}
                         />
                       </FormControl>
-                      <FormMessage className="text-red-500" />
+                      <FormMessage className="text-red-500 text-sm font-medium mt-1 bg-red-50 dark:bg-red-950/20 px-2 py-1 rounded-md" />
                     </FormItem>
                   )}
                 />
@@ -156,11 +214,15 @@ export default function ContactForm() {
                       <FormControl>
                         <Input
                           placeholder="Enter message subject"
-                          className="rounded-[8px] border-[var(--input-border-color)] bg-[var(--input-background)] text-[var(--input-text)]"
+                          className={cn(
+                            "rounded-[8px] border-[var(--input-border-color)] bg-[var(--input-background)] text-[var(--input-text)]",
+                            form.formState.errors.subject &&
+                              "border-red-500 focus:border-red-500 focus:ring-red-500"
+                          )}
                           {...field}
                         />
                       </FormControl>
-                      <FormMessage className="text-red-500" />
+                      <FormMessage className="text-red-500 text-sm font-medium mt-1 bg-red-50 dark:bg-red-950/20 px-2 py-1 rounded-md" />
                     </FormItem>
                   )}
                 />
@@ -176,22 +238,45 @@ export default function ContactForm() {
                       <FormControl>
                         <Textarea
                           placeholder="Write your message here"
-                          className="h-[200px] rounded-[8px] border-[var(--input-border-color)] bg-[var(--input-background)] text-[var(--input-text)]"
+                          className={cn(
+                            "h-[200px] rounded-[8px] border-[var(--input-border-color)] bg-[var(--input-background)] text-[var(--input-text)]",
+                            form.formState.errors.message &&
+                              "border-red-500 focus:border-red-500 focus:ring-red-500"
+                          )}
                           {...field}
                         />
                       </FormControl>
-                      <FormMessage className="text-red-500" />
+                      <div className="flex justify-between items-center">
+                        <FormMessage className="text-red-500 text-sm font-medium mt-1 bg-red-50 dark:bg-red-950/20 px-2 py-1 rounded-md" />
+                        <span className="text-sm text-gray-500 mt-1">
+                          {field.value?.length || 0}/1000
+                        </span>
+                      </div>
                     </FormItem>
                   )}
                 />
 
                 <Button
                   type="submit"
-                  disabled={isSubmitting}
-                  className="w-max bg-[var(--button)] text-[var(--button-text)] hover:bg-[var(--button2)]"
+                  disabled={isSubmitting || !form.formState.isValid}
+                  className={cn(
+                    "w-max bg-[var(--button)] text-[var(--button-text)] hover:bg-[var(--button2)]",
+                    "disabled:opacity-50 disabled:cursor-not-allowed"
+                  )}
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
+
+                {Object.keys(form.formState.errors).length > 0 && (
+                  <div className="text-sm text-red-500 mt-2">
+                    Please input value for{" "}
+                    {Object.keys(form.formState.errors).length} fields
+                    {Object.keys(form.formState.errors).length === 1
+                      ? ""
+                      : "s"}{" "}
+                    above.
+                  </div>
+                )}
               </form>
             </Form>
           </ClickSpark>
