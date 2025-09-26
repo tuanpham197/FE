@@ -14,7 +14,13 @@ const WORK_EXPERIENCE: ExperienceItemType[] = [
         title: "Backend Engineer",
         employmentPeriod: "March 2024 – Present",
         employmentType: "Full-time",
-        description: `• Developed and launched multiple full-stack web applications in a fast-paced startup environment.\n`,
+        description: `• Project description:\n\nThe real estate investment website where you can receive annual dividends.
+          \n\n• Main responsibilities:
+          \n\nDevelop new feature
+          \n\nRenew old feature from cakePHP to Laravel
+          \n\nDesign database for new function
+          \n\n• Achieved results: \n\nComplete release pharse 1\n\nProject of the year 2024
+          \n\n• Team size: \n\n14 members`,
         icon: "code",
         skills: [
           "PHP",
@@ -39,7 +45,70 @@ const WORK_EXPERIENCE: ExperienceItemType[] = [
       {
         id: "2-1",
         title: "Backend Developer",
-        employmentPeriod: "Feb 2022 – Feb 2024",
+        employmentPeriod: "August 2023 – March 2024",
+        employmentType: "Full-time",
+        description: `• Project description:\n\nThis is an internal website for selling pharmaceuticals and functional foods.
+          \n\n• Main responsibilities:
+          \n\nBuild struct source base
+          \n\nBuild basic service (auth, helper, crud entity, some feature ...)
+          \n\nDesign database
+          \n\n• Achieved results: \n\nLearn about deployment microservice system
+          \n\n• Team size: \n\n8 members`,
+        icon: "code",
+        skills: [
+          "GoLang",
+          "RabbitMQ",
+          "gRPC",
+          "Redis",
+          "MySQL",
+          "MongoDB",
+          "Docker",
+          "Kong",
+        ],
+        location: "Da Nang, VietNam",
+      },
+      {
+        id: "2-2",
+        title: "Backend Developer",
+        employmentPeriod: "April 2023 – August 2023",
+        employmentType: "Full-time",
+        description: `• Developed the Sustainable Star Form Builder platform with customizable forms and drag-and-drop functionality.\n\n• Ensured responsive design and optimized frontend performance for a seamless user experience.\n\n• Collaborated with designers and backend engineers to deliver new features and improvements.`,
+        icon: "code",
+        skills: [
+          "Laravel",
+          "PHP",
+          "VueJS",
+          "TypeScript",
+          "Tailwind CSS",
+          "REST APIs",
+          "Git",
+          "Axios",
+        ],
+        location: "Da Nang, VietNam",
+      },
+      {
+        id: "2-3",
+        title: "Backend Developer",
+        employmentPeriod: "July 2022 – April 2023",
+        employmentType: "Full-time",
+        description: `• Developed the Sustainable Star Form Builder platform with customizable forms and drag-and-drop functionality.\n\n• Ensured responsive design and optimized frontend performance for a seamless user experience.\n\n• Collaborated with designers and backend engineers to deliver new features and improvements.`,
+        icon: "code",
+        skills: [
+          "Laravel",
+          "PHP",
+          "VueJS",
+          "TypeScript",
+          "Tailwind CSS",
+          "REST APIs",
+          "Git",
+          "Axios",
+        ],
+        location: "Da Nang, VietNam",
+      },
+      {
+        id: "2-4",
+        title: "Fullstack Developer",
+        employmentPeriod: "February 2022 – July 2022",
         employmentType: "Full-time",
         description: `• Developed the Sustainable Star Form Builder platform with customizable forms and drag-and-drop functionality.\n\n• Ensured responsive design and optimized frontend performance for a seamless user experience.\n\n• Collaborated with designers and backend engineers to deliver new features and improvements.`,
         icon: "code",

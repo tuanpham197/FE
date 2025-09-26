@@ -126,9 +126,8 @@ export default function RootLayout({
               url: websitePath.main,
               image: webImage,
               sameAs: [
-                "https://github.com/balshaer",
-                "https://www.linkedin.com/in/balshaer/",
-                "https://www.youtube.com/@Codewithbaraa",
+                "https://github.com/tuanpham197",
+                "https://www.linkedin.com/tuanpham197",
               ],
               jobTitle: "Full Stack Developer",
               worksFor: {

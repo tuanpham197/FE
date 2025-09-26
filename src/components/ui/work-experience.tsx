@@ -99,7 +99,11 @@ function ExperienceItem({ experience }: { experience: ExperienceItemType }) {
   );
 }
 
-function ExperiencePositionItem({ position }: { position: ExperiencePositionItemType }) {
+function ExperiencePositionItem({
+  position,
+}: {
+  position: ExperiencePositionItemType;
+}) {
   const [isOpen, setIsOpen] = useState(position.isExpanded ?? false);
 
   useEffect(() => {
@@ -118,13 +122,19 @@ function ExperiencePositionItem({ position }: { position: ExperiencePositionItem
             transition={{ type: "spring", stiffness: 300, damping: 25 }}
           >
             <div className="relative z-10 mb-1 flex items-center gap-3 bg-[var(--background)]">
-              <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-[var(--card-background)] border text-[var(--card-paragraph)]" aria-hidden>
+              <div
+                className="flex h-6 w-6 shrink-0 items-center justify-center rounded-lg bg-[var(--card-background)] border text-[var(--card-paragraph)]"
+                aria-hidden
+              >
                 <ExperienceIcon className="h-4 w-4" />
               </div>
               <h4 className="flex-1 text-base font-medium text-[var(--main)]">
                 {position.title}
               </h4>
-              <div className="shrink-0 text-[var(--secondary)] [&_svg]:h-4 [&_svg]:w-4" aria-hidden>
+              <div
+                className="shrink-0 text-[var(--secondary)] [&_svg]:h-4 [&_svg]:w-4"
+                aria-hidden
+              >
                 {isOpen ? <ChevronsDownUpIcon /> : <ChevronsUpDownIcon />}
               </div>
             </div>
@@ -135,7 +145,11 @@ function ExperiencePositionItem({ position }: { position: ExperiencePositionItem
                     <dt className="sr-only">Employment Type</dt>
                     <dd>{position.employmentType}</dd>
                   </dl>
-                  <Separator className="data-[orientation=vertical]:h-4" orientation="vertical" style={{ borderColor: "var(--border)" }} />
+                  <Separator
+                    className="data-[orientation=vertical]:h-4"
+                    orientation="vertical"
+                    style={{ borderColor: "var(--border)" }}
+                  />
                 </>
               )}
               <dl>
@@ -149,7 +163,11 @@ function ExperiencePositionItem({ position }: { position: ExperiencePositionItem
           <motion.div
             key={isOpen ? "open" : "closed"}
             initial={{ opacity: 0, height: 0 }}
-            animate={isOpen ? { opacity: 1, height: "auto" } : { opacity: 0, height: 0 }}
+            animate={
+              isOpen
+                ? { opacity: 1, height: "auto" }
+                : { opacity: 0, height: 0 }
+            }
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25 }}
             style={{ overflow: "hidden" }}
@@ -175,8 +193,18 @@ function DescriptionList({ description }: { description: string }) {
       <ul className="mb-4 list-disc ml-6 space-y-2">
         {description.split("\n\n").map((desc, idx) => (
           <li key={idx} className="flex items-start gap-2">
-            <span className="text-base leading-5">-</span>
-            <span>{desc.replace(/^•\s*/, "")}</span>
+            {desc.startsWith("•") ? (
+              <span className="text-base leading-5">-</span>
+            ) : (
+              <span className="text-base leading-5 ml-2"> +</span>
+            )}
+            {desc.startsWith("•") ? (
+              <span>
+                <b>{desc.replace(/^•\s*/, "")}</b>
+              </span>
+            ) : (
+              <span>{desc.replace(/^•\s*/, "")}</span>
+            )}
           </li>
         ))}
       </ul>
@@ -189,7 +217,10 @@ function SkillsSection({ skills }: { skills?: string[] }) {
     <div className="pl-9 max-md:pl-2">
       <ul className="mb-4 list-disc ml-6 space-y-2">
         <li className="flex items-center gap-2 ">
-          <SkillsList skills={Array.isArray(skills) ? skills : []} iconMap={skillIconMap} />
+          <SkillsList
+            skills={Array.isArray(skills) ? skills : []}
+            iconMap={skillIconMap}
+          />
         </li>
       </ul>
     </div>

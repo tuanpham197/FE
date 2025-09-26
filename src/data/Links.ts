@@ -1,13 +1,13 @@
-export const domain = "alshaer.vercel.app";
-export const email = "alshaer.contact@gmail.com";
-export const phoneNumber = "970599349034";
-export const linkedin = "https://www.linkedin.com/in/balshaer/";
+export const domain = "tuanpv-cv.vercel.app";
+export const email = "vantuankrn197@gmail.com";
+export const phoneNumber = "0337636242";
+export const linkedin = "https://www.linkedin.com/tuanpham197/";
 export const github = "https://github.com/balshaer";
 export const whatsapp = `https://wa.me/${phoneNumber}`;
-export const youtube = "https://www.youtube.com/@Codewithbaraa";
+export const youtube = "https://www.youtube.com/@tuanpham197";
 export const mailto = `mailto:${email}`;
-export const alazhar = "https://www.alazhar.edu.ps/eng/index.asp";
-export const website = "https://alshaer.vercel.app/";
+export const alazhar = "https://tuanpv-cv.vercel.app/";
+export const website = "https://tuanpv-cv.vercel.app/";
 
 export const websitePath = {
   main: `${website}`,
@@ -17,25 +17,24 @@ export const websitePath = {
 };
 
 export const companies = {
-  ptit: "http://ptit.com.sa/",
-  sustainablestar: "https://sustainablestar.com.sa/",
+  ptit: "https://tuanpv-cv.vercel.app/",
+  sustainablestar: "https://tuanpv-cv.vercel.app/",
   gedco: "#",
-  samtax: "https://www.sam-tax.com/",
+  samtax: "https://tuanpv-cv.vercel.app/",
 };
 
 export const projects = {
-  sfb: "https://sfb-app.com/",
-  samtax: "https://www.sam-tax.com/",
+  sfb: "https://tuanpv-cv.vercel.app/",
+  samtax: "https://tuanpv-cv.vercel.app/",
   gradientscss: {
-    website: "https://gradientscss.vercel.app/",
-    github: "https://github.com/balshaer/gradients-css",
+    website: "https://tuanpv-cv.vercel.app/",
+    github: "https://tuanpv-cv.vercel.app/",
   },
-  raoufzadi: "https://raoufzadi.vercel.app/",
-  najcenter: "https://naj.shamilapp.com/",
-  rove: "https://github.com/balshaer/rove",
-  sustainablestar: "https://sustainablestar.com.sa/",
-  bookstoreapi: "https://github.com/balshaer/bookstore-api",
+  raoufzadi: "https://tuanpv-cv.vercel.app/",
+  najcenter: "https://tuanpv-cv.vercel.app/",
+  rove: "https://tuanpv-cv.vercel.app/",
+  sustainablestar: "https://tuanpv-cv.vercel.app/",
+  bookstoreapi: "https://tuanpv-cv.vercel.app/",
 };
 
-export const webImage =
-  "https://cdn.dribbble.com/userupload/14186516/file/original-302bcec5d5a7d2bae6c18ee8cabc5f37.png?resize=400x400";
+export const webImage = "/logo-cv.png";

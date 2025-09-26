@@ -1,6 +1,7 @@
 "use client";
 
-import { motion, useAnimation } from "framer-motion";
+import { useAnimation } from "framer-motion";
+import Image from "next/image";
 import { useState } from "react";
 
 export default function Logo() {
@@ -31,7 +32,7 @@ export default function Logo() {
       onMouseEnter={handleHoverStart}
       onMouseLeave={handleHoverEnd}
     >
-      <svg
+      {/* <svg
         viewBox="100 60 180 260"
         xmlns="http://www.w3.org/2000/svg"
         className="relative h-full w-full"
@@ -56,7 +57,14 @@ export default function Logo() {
           variants={pathVariants}
           style={{ transition: "stroke-width 0.3s ease" }}
         />
-      </svg>
+      </svg> */}
+      <Image
+        src="/logo-cv.png"
+        alt="Logo"
+        layout="fill"
+        objectFit="contain"
+        className="relative h-full w-full"
+      />
     </div>
   );
 }
