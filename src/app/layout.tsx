@@ -79,7 +79,7 @@ export const metadata: Metadata = {
     description:
       "Explore the portfolio of Tuan Pham Van, Full Stack Developer. Projects, experience, and contact details.",
     images: webImage,
-    creator: "@balshaer",
+    creator: "@tuanpham197",
   },
   robots: {
     index: true,
